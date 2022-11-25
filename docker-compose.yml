@@ -66,3 +66,19 @@ services:
       - "./serv2:/var/www/html"
     networks:
       - laravel
+
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: phpmyadmin
+    links:
+      - mysql
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    restart: always
+    ports:
+      - 8083:80
+    networks:
+      - laravel
+    
