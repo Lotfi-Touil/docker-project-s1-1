@@ -13,3 +13,7 @@ RUN apk add libzip-dev
 RUN apk add --update nodejs npm
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin/ --filename=composer
+
+COPY ./serv1/composer.lock /var/www/html/composer.lock
+
+COPY ./serv1/composer.json /var/www/html/composer.lock
