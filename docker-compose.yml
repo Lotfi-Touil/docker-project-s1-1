@@ -54,6 +54,8 @@ services:
       - "9000"
     volumes:
       - "./serv1:/var/www/html"
+    depends_on:
+      - mysql
     networks:
       - laravel
 
@@ -66,6 +68,8 @@ services:
       - "9000"
     volumes:
       - "./serv2:/var/www/html"
+    depends_on:
+      - mysql
     networks:
       - laravel
 
