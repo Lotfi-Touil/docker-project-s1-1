@@ -33,7 +33,7 @@ services:
     ports:
       - "3311:3306"
     volumes:
-      - "./mysql:/var/lib/mysql"
+      - "mysql:/var/lib/mysql"
     restart: unless-stopped
     tty: true
     environment:
